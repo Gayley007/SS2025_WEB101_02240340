@@ -1,4 +1,4 @@
-## PRACTICAL 1 
+## PRACTICAL 1 : TikTok
 ### Key Concepts Applied
 
 1. **Next.js App Router & File System Routing**     Used for page creation with clean structure and scalability.

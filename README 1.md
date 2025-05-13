@@ -1,4 +1,4 @@
-## PRACTICAL 1 
+## PRACTICAL 1 : TikTok
 
 ### Project Overview
 This project involves building a basic TikTok-style web layout using Next.js with Tailwind CSS. The main goals include:
@@ -8,7 +8,6 @@ This project involves building a basic TikTok-style web layout using Next.js wit
 - Implementing core pages like profile, upload, explore, etc.
 - Building a responsive video feed
 - Adding login and registration functionality with form validation using `react-hook-form`
-
 
 ### Part 1: Getting Started
 

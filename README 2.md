@@ -56,7 +56,7 @@ const apiKey = "YOUR_OPENWEATHERMAP_API_KEY";
 
 ### Test Each API Feature
 
-GET: Enter a city name and click "Get Weather"
-POST: Enter location details and click "Save Location"
-PUT: Click "Edit", update the info, and click "Update"
-DELETE: Click "Delete" next to a saved location
+GET: Enter a city name and click "Get Weather". <br>
+POST: Enter location details and click "Save Location".<br>
+PUT: Click "Edit", update the info, and click "Update".<br>
+DELETE: Click "Delete" next to a saved location.

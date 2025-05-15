@@ -15,13 +15,13 @@ This project involves building a basic TikTok-style web layout using Next.js wit
 ```bash
 npx create-next-app@latest
 ```
-Use the following configuration:
-    TypeScript: ❌ 
-    ESLint: ✅ 
-    Tailwind CSS: ✅ 
-    src/ directory: ✅ 
-    App Router: ✅ 
-    Import alias: ❌ 
+Use the following configuration: <br>
+    TypeScript: ❌ <br>
+    ESLint: ✅ <br>
+    Tailwind CSS: ✅ <br>
+    src/ directory: ✅ <br>
+    App Router: ✅ <br>
+    Import alias: ❌ <br>
 
 ```bash
 npm install

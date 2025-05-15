@@ -1,4 +1,4 @@
-## PRACTICAL 1 : File Upload Implementation
+## PRACTICAL 3 : File Upload Implementation
 
 ### Key Concepts Applied
 
@@ -33,7 +33,7 @@
 ### Challenges Faced
 
 #### 1. Formidable Parsing Error
-**Problem:** Initial attempt to parse `multipart/form-data` failed with an internal error.  
+**Problem:** Initial attempt to parse `multipart/form-data` failed with an internal error.  <br>
 **Solution:** Disabled body parsing using:
 ```js
 export const config = {
@@ -44,7 +44,7 @@ export const config = {
 ```
 
 #### 2. Drag and Drop Events Not Triggering
-Problem: Drag events were not being registered.
+Problem: Drag events were not being registered.<br>
 Solution: Correctly applied props from useDropzone():
 ```js
 {...getRootProps()}
@@ -52,7 +52,7 @@ Solution: Correctly applied props from useDropzone():
 ```
 
 #### 3. Axios Progress Bar Not Updating
-Problem: onUploadProgress wasn't triggering properly.
+Problem: onUploadProgress wasn't triggering properly.<br>
 Solution: Ensured correct config and passed to Axios POST request:
 ```js
 onUploadProgress: (progressEvent) => {

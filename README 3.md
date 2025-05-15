@@ -20,10 +20,13 @@ npm install react-hook-form formidable axios react-dropzone
 ```
 
 ### Usage Instructions
-Run locally
+1. Run locally
 ```bash 
 npm run dev
 ```
-- Visit http://localhost:3000
-- Upload files via drag-and-drop or file picker
-- View progress bar and upload confirmation
+
+2. Visit http://localhost:3000
+
+3. Upload files via drag-and-drop or file picker
+
+4. View progress bar and upload confirmation

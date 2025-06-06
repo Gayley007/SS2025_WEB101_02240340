@@ -1,62 +1,62 @@
-## PRACTICAL 1 : File Upload Implementation
+## PRACTICAL 4: Connecting TikTok Frontend to Backend
 
 ### Key Concepts Applied
 
-1. **React Hook Form**
-   - Used for form handling and validation.
-   - Integrated file input with validation rules.
+1. **API Client Configuration**
+   - Set up a centralized Axios instance in `api-config.js` to handle requests to the backend.
+   - Implemented request interceptors to attach JWT tokens to authenticated API calls.
+   - Managed error responses globally for a cleaner user experience.
 
-2. **Formidable**
-   - Used on the backend to handle `multipart/form-data`.
+2. **JWT-Based Authentication**
+   - Created `authContext.jsx` to manage authentication state across the app.
+   - Used `localStorage` to store and retrieve JWT tokens.
+   - Enabled login, signup, and logout functionality using modals and context.
 
-3. **Axios**
-   - Used to send POST requests and track upload progress using `onUploadProgress`.
+3. **Dynamic UI Based on Auth State**
+   - Used conditional rendering to show or hide navigation items depending on the login status.
+   - Displayed user-specific data such as profile info and personalized feed.
 
-4. **React Dropzone**
-   - Implemented drag-and-drop file upload UI.
+4. **Real Video Feed Integration**
+   - Fetched real video data from the backend instead of using mock data.
+   - Updated `VideoFeed.jsx` and `VideoCard.jsx` to support like/unlike, comments, and playback.
 
-5. **Validation**
-   - Files limited by type (`.jpg`, `.png`, `.pdf`)
-   - Max file size check (e.g., 5MB)
+5. **User Discovery and Following System**
+   - Created `Explore Users` and `Following` pages using API calls.
+   - Implemented follow/unfollow functionality and updated UI in real-time.
+   - Supported dynamic user profiles and personalized video feeds.
 
-6. **Upload Progress**
-   - Real-time progress bar updates as the file uploads
+6. **Upload and Protected Routes**
+   - Allowed authenticated users to upload videos with captions and thumbnails.
+   - Prevented access to protected pages (like upload) unless the user was logged in.
+
 
 ### What I Learned
 
-- How to handle file uploads with validation in a React/Next.js app
-- How to use `formidable` for parsing file uploads on API routes
-- Integration of drag-and-drop UI using `react-dropzone`
-- Tracking upload progress using Axios and displaying a progress bar
-- Structuring a full-stack file upload solution in a Next.js project
+- How to fully integrate a frontend (Next.js) with a backend (Express) using authenticated API calls.
+- Managing global authentication state using React Context and JWT tokens.
+- Connecting backend endpoints for videos, users, likes, and comments to a responsive UI.
+- Building scalable React components that reflect real-time data interactions.
+- Handling token-based security and cross-origin requests with proper configuration.
+
 
 ### Challenges Faced
 
-#### 1. Formidable Parsing Error
-**Problem:** Initial attempt to parse `multipart/form-data` failed with an internal error.<br>  
-**Solution:** Disabled body parsing using:
-```js
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
-```
+#### 1. Invalid or Expired JWT Token
+**Problem:** API requests failed due to expired or missing tokens  
+**Solution:** Used `jwt-decode` to verify token expiration and redirected users to log in again.
 
-#### 2. Drag and Drop Events Not Triggering
-Problem: Drag events were not being registered.<br>
-Solution: Correctly applied props from useDropzone():
-```js
-{...getRootProps()}
-{...getInputProps()}
-```
+#### 2. Incorrect Follow State Updates
+**Problem:** Follow/unfollow UI did not reflect changes immediately  
+**Solution:** Refetched user data or updated local state manually after follow actions.
 
-#### 3. Axios Progress Bar Not Updating
-Problem: onUploadProgress wasn't triggering properly.<br>
-Solution: Ensured correct config and passed to Axios POST request:
-```js
-onUploadProgress: (progressEvent) => {
-  const percent = Math.round((progressEvent.loaded * 100) / progressEvent.total);
-  setProgress(percent);
-}
-```
+#### 3. Comment and Like Delay
+**Problem:** Like/unlike actions did not update until page refresh  
+**Solution:** Used optimistic updates and revalidation techniques in service functions.
+
+#### 4. CORS Errors Between Frontend and Backend
+**Problem:** Cross-origin requests were being blocked  
+**Solution:** Configured CORS middleware in the backend with allowed origins and credentials.
+
+#### 5. Modal Not Closing After Login
+**Problem:** AuthModal stayed open even after successful login  
+**Solution:** Added a close function triggered by auth context state change.
